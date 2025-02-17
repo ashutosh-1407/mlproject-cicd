@@ -1,15 +1,29 @@
-## End to End Machine Learning Project
+## End to End MAchine Learning Project
 
-Different ways of deploying to Cloud
+1. Docker Build checked
+2. Github Workflow
+3. IAM User In AWS
 
-AWS - 
+## Docker Setup In EC2 commands to be Executed
 
-Method 1 (Probably the "EASIEST WAY"):
-1. Create a folder called ".ebextensions" and a file inside called "python.config" with the lines shown below (for web server in a container).
-    option_settings:
-    "aws:elasticbeanstalk:container:python":
-        WSGIPath: app:app
-2. Make sure to give the correct WSGIPath.
-3. Go to AWS Elastic Beanstack and create an application, wait for it to get created.
-4. Create a Code Pipeline using AWS CodePipeline, link it your github account.
-5. This will create a CD pipeline. That means as soon as you push some changes, you will see a button to "Release change" to deploy the changes to AWS Elastic Beanstalk.
+#optional
+
+sudo apt-get update -y
+sudo apt-get upgrade
+
+#required
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker ubuntu
+newgrp docker
+
+## Configure EC2 as self-hosted runner:
+
+## Setup github secrets:
+
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
+AWS_REGION = us-east-1
+AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
+ECR_REPOSITORY_NAME = simple-app
