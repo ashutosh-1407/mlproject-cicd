@@ -172,4 +172,4 @@ cython_debug/
 
 # Added for mlproject
 *.DS_Store
-artifacts/
+artifacts/*.csv
