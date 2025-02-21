@@ -53,4 +53,4 @@ if __name__ == "__main__":
 
     trainer_obj = ModelTrainer()
     best_model_score = trainer_obj.initiate_model_trainer(train_array, test_array)
-    print(best_model_score)
+    print("best score", best_model_score)

@@ -9,13 +9,17 @@
 #optional
 
 sudo apt-get update -y
+
 sudo apt-get upgrade
 
 #required
 
 curl -fsSL https://get.docker.com -o get-docker.sh
+
 sudo sh get-docker.sh
+
 sudo usermod -aG docker ubuntu
+
 newgrp docker
 
 ## Configure EC2 as self-hosted runner:
@@ -23,7 +27,17 @@ newgrp docker
 ## Setup github secrets:
 
 AWS_ACCESS_KEY_ID=
+
 AWS_SECRET_ACCESS_KEY=
+
 AWS_REGION = us-east-1
+
 AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
+
 ECR_REPOSITORY_NAME = simple-app
+
+# To push larger files:
+
+git config --global http.postBuffer 524288000  # 500MB
+
+git config --global http.maxRequestBuffer 100M
