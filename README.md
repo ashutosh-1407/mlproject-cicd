@@ -41,3 +41,13 @@ ECR_REPOSITORY_NAME = simple-app
 git config --global http.postBuffer 524288000  # 500MB
 
 git config --global http.maxRequestBuffer 100M
+
+# Other settings
+
+# If Conda auto-activates (base), you can disable it:
+
+conda config --set auto_activate_base false
+
+# setting PYTHONPATH
+
+export PYTHONPATH=$PYTHONPATH:/path/to/mlproject-cicd
